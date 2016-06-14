@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>vNot&#39;s Blog</title>
+  <subtitle>Do Something</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-06-14T11:09:07.241Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>vNot</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>天了噜-密码忘记了</title>
+    <link href="http://yoursite.com/2016/06/14/forget-password/"/>
+    <id>http://yoursite.com/2016/06/14/forget-password/</id>
+    <published>2016-06-14T09:50:14.000Z</published>
+    <updated>2016-06-14T11:09:07.241Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;大大的RT!&lt;/strong&gt;&lt;br&gt;盛怒之下，开篇备忘，&lt;br&gt;1024在手，密码我有！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;大大的RT!&lt;/strong&gt;&lt;br&gt;盛怒之下，开篇备忘，&lt;br&gt;1024在手，密码我有！&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="蛋疼" scheme="http://yoursite.com/tags/%E8%9B%8B%E7%96%BC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>移动端自适应布局研究</title>
+    <link href="http://yoursite.com/2015/09/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%E7%A0%94%E7%A9%B6/"/>
+    <id>http://yoursite.com/2015/09/30/移动端自适应布局研究/</id>
+    <published>2015-09-29T16:17:00.000Z</published>
+    <updated>2016-06-14T08:10:22.876Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;开发移动端H5页面
+面对不同分辨率的手机
+面对不同屏幕尺寸的手机
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;基础概念&quot;&gt;&lt;a href=&quot;#基础概念&quot; class=&quot;headerlink&quot; title=&quot;基础概念&quot;&gt;&lt;/a&gt;基础概念&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;物理像素（physical pixel）&lt;/strong&gt;&lt;br&gt;一个物理像素是显示器(手机屏幕)上最小的&lt;code&gt;物理显示单元&lt;/code&gt;，在操作系统的调度下，每一个设备像素都有自己的颜色值和亮度值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;设备独立像素(density-independent pixel)&lt;/strong&gt;&lt;br&gt;设备独立像素（狭义：&lt;code&gt;设备宽高&lt;/code&gt;），可以认为是计算机坐标系统中得一个点，这个点代表一个可以由程序使用的虚拟像素(比如: css像素)，然后由相关系统转换为物理像素。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;设备像素比(device pixel ratio )&lt;/strong&gt;&lt;br&gt;设备像素比(简称&lt;code&gt;dpr&lt;/code&gt;)定义了物理像素和设备独立像素的对应关系，它的值可以按如下的公式的得到：&lt;/p&gt;
+&lt;figure class=&quot;highlight 1c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;设备像素比 = 物理像素 / 设备独立像素 &lt;span class=&quot;comment&quot;&gt;// 在某一方向上，x方向或者y方向&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;在javascript中，可以通过window.devicePixelRatio获取到当前设备的dpr。&lt;/p&gt;
+&lt;p&gt;  在css中，可以通过-webkit-device-pixel-ratio，-webkit-min-device-pixel-ratio和-webkit-max-device-pixel-ratio进行媒体查询，对不同dpr的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)。  &lt;/p&gt;
+&lt;p&gt;以&lt;code&gt;iphone6&lt;/code&gt;为例：&lt;/p&gt;
+&lt;p&gt;设备宽高为&lt;code&gt;375×667&lt;/code&gt;，可以理解为设备独立像素(或css像素)。&lt;br&gt;dpr为2，根据上面的计算公式，其物理像素就应该&lt;code&gt;×2&lt;/code&gt;，为&lt;code&gt;750×1334&lt;/code&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;在普通屏幕下，1个css像素 对应 1个物理像素(1:1)。
+在retina 屏幕下，1个css像素对应 4个物理像素(1:4)。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用一张图来表现，就是这样：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.alicdn.com/tps/TB1uWfJIpXXXXaoXXXXXXXXXXXX.gif&quot; alt=&quot;原谅我也盗图了&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;问题汇总&quot;&gt;&lt;a href=&quot;#问题汇总&quot; class=&quot;headerlink&quot; title=&quot;问题汇总&quot;&gt;&lt;/a&gt;问题汇总&lt;/h2&gt;&lt;h3 id=&quot;retina下，图片高清问题&quot;&gt;&lt;a href=&quot;#retina下，图片高清问题&quot; class=&quot;headerlink&quot; title=&quot;retina下，图片高清问题&quot;&gt;&lt;/a&gt;retina下，图片高清问题&lt;/h3&gt;&lt;p&gt;解决方案：两倍图片(@2x)，然后图片容器缩小50%。&lt;br&gt;如：图片大小，400×600;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;300&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;背景CSS&lt;br&gt;&lt;figure class=&quot;highlight scss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;background-image&lt;/span&gt;: url(image@&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;x.jpg);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;background-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 或者: background-size: contain;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这样的缺点，很明显，普通屏幕下：&lt;/p&gt;
+&lt;p&gt;同样下载了@2x的图片，造成资源浪费。&lt;br&gt;图片由于downsampling，会失去了一些锐利度(或是色差)。&lt;/p&gt;
+&lt;p&gt;所以最好的解决办法是：不同的dpr下，加载不同的尺寸的图片。&lt;br&gt;不管是通过css媒体查询，还是通过javascript条件判断都是可以的。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;PS: 更好的解决方案，通过图片服务器，服务端裁剪图片。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&quot;retina下，border-1px问题&quot;&gt;&lt;a href=&quot;#retina下，border-1px问题&quot; class=&quot;headerlink&quot; title=&quot;retina下，border: 1px问题&quot;&gt;&lt;/a&gt;retina下，border: 1px问题&lt;/h3&gt;&lt;p&gt;直接上图：&lt;br&gt;&lt;img src=&quot;https://img.alicdn.com/tps/TB1OPkfIpXXXXXWaXXXXXXXXXXX.jpg_q90.jpg&quot; alt=&quot;对比图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  上图中，对于一条1px宽的直线，它们在屏幕上的物理尺寸(灰色区域)的确是相同的，不同的其实是屏幕上最小的物理显示单元，即物理像素，所以对于一条直线，iphone5它能显示的最小宽度其实是图中的红线圈出来的灰色区域，用css来表示，理论上说是0.5px。&lt;/p&gt;
+&lt;p&gt;  &lt;strong&gt;所以，设计师想要的retina下border: 1px;，其实就是1物理像素宽，对于css而言，可以认为是border: 0.5px;，这是retina下(dpr=2)下能显示的最小单位。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;  然而，无奈并不是所有手机浏览器都能识别border: 0.5px;，ios7以下，android等其他系统里，0.5px会被当成为0px处理，那么如何实现这0.5px呢？&lt;/p&gt;
+&lt;p&gt;  最简单的一个做法就是这样(&lt;strong&gt;元素scale&lt;/strong&gt;)：&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.scale&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: relative;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.scale&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:after&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: absolute;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;bottom&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;right&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;border-bottom&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;1px&lt;/span&gt; solid &lt;span class=&quot;number&quot;&gt;#ddd&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-webkit-transform&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;scaleY&lt;/span&gt;(.5);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-webkit-transform-origin&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;我们照常写border-bottom: 1px solid #ddd;，然后通过transform: scaleY(.5)缩小0.5倍来达到0.5px的效果，但是这样hack实在是不够通用(如：圆角等)，写起来也麻烦。&lt;/p&gt;
+&lt;p&gt;当然还有其他好多hack方法，网上都可以搜索到，但是各有利弊，这里比较推荐的还是页面scale的方案，是比较通用的，几乎满足所有场景。&lt;/p&gt;
+&lt;p&gt;对于iphone5(dpr=2)，添加如下的meta标签，设置viewport(scale 0.5)：&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;width=640,initial-scale=0.5,maximum-scale=0.5, minimum-scale=0.5,user-scalable=no&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;多屏适配布局问题&quot;&gt;&lt;a href=&quot;#多屏适配布局问题&quot; class=&quot;headerlink&quot; title=&quot;多屏适配布局问题&quot;&gt;&lt;/a&gt;多屏适配布局问题&lt;/h3&gt;&lt;p&gt;核心方案：&lt;code&gt;rem&lt;/code&gt;等比例适配，也是直接上代码：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;html&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;20px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.btn&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;6rem&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;3rem&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;line-height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;3rem&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.2rem&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: inline-block;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#06c&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#fff&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;border-radius&lt;/span&gt;: .&lt;span class=&quot;number&quot;&gt;5rem&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;text-decoration&lt;/span&gt;: none;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;通过JS动态改变&lt;code&gt;html&lt;/code&gt;根节点字号可以等比改变所有用了rem单位的元素。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;doc, win&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; docEl = doc.documentElement,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    resizeEvt = &lt;span class=&quot;string&quot;&gt;&#39;orientationchange&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt; ? &lt;span class=&quot;string&quot;&gt;&#39;orientationchange&#39;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&#39;resize&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    recalc = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; clientWidth = docEl.clientWidth;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!clientWidth) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        docEl.style.fontSize = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt; * (clientWidth / &lt;span class=&quot;number&quot;&gt;640&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;&#39;px&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!doc.addEventListener) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  win.addEventListener(resizeEvt, recalc, &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  doc.addEventListener(&lt;span class=&quot;string&quot;&gt;&#39;DOMContentLoaded&#39;&lt;/span&gt;, recalc, &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这里的设计稿是按640的尺寸来设定的，不同分辨率下font-size的值如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://520ued.com/uploads/20141218/1418903956.jpeg&quot; alt=&quot;华丽盗图，请勿追究！&quot;&gt;&lt;/p&gt;
+&lt;p&gt;以上选取自：&lt;br&gt;&lt;a href=&quot;http://sentsin.com/web/1212.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;移动端高清、多屏适配方案&lt;/a&gt;[^1]&lt;br&gt;&lt;a href=&quot;http://isux.tencent.com/web-app-rem.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;web app变革之rem&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;开发移动端H5页面
+面对不同分辨率的手机
+面对不同屏幕尺寸的手机
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;基础概念&quot;&gt;&lt;a href=&quot;#基础概念&quot; class=&quot;headerlink&quot; title=&quot;基础概念&quot;&gt;&lt;/a&gt;基础概念&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;物理像素（physical pixel）&lt;/strong&gt;&lt;br&gt;一个物理像素是显示器(手机屏幕)上最小的&lt;code&gt;物理显示单元&lt;/code&gt;，在操作系统的调度下，每一个设备像素都有自己的颜色值和亮度值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;设备独立像素(density-independent pixel)&lt;/strong&gt;&lt;br&gt;设备独立像素（狭义：&lt;code&gt;设备宽高&lt;/code&gt;），可以认为是计算机坐标系统中得一个点，这个点代表一个可以由程序使用的虚拟像素(比如: css像素)，然后由相关系统转换为物理像素。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;设备像素比(device pixel ratio )&lt;/strong&gt;&lt;br&gt;设备像素比(简称&lt;code&gt;dpr&lt;/code&gt;)定义了物理像素和设备独立像素的对应关系，它的值可以按如下的公式的得到：&lt;/p&gt;
+&lt;figure class=&quot;highlight 1c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;设备像素比 = 物理像素 / 设备独立像素 &lt;span class=&quot;comment&quot;&gt;// 在某一方向上，x方向或者y方向&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Say sorry to V god</title>
+    <link href="http://yoursite.com/2015/09/11/Say-sorry-to-V-god/"/>
+    <id>http://yoursite.com/2015/09/11/Say-sorry-to-V-god/</id>
+    <published>2015-09-11T08:42:34.000Z</published>
+    <updated>2015-09-11T09:15:23.340Z</updated>
+    
+    <content type="html">&lt;p&gt;至此，V神的Next主题已被鄙人所抛弃&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;跟着感觉走让它带着我&lt;br&gt;希望就在不远处等着我&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;《跟着感觉走》&quot;&gt;&lt;a href=&quot;#《跟着感觉走》&quot; class=&quot;headerlink&quot; title=&quot;《跟着感觉走》&quot;&gt;&lt;/a&gt;《跟着感觉走》&lt;/h3&gt;&lt;p&gt;跟着感觉走紧抓住梦的手&lt;br&gt;脚步越来越轻越来越快活&lt;br&gt;尽情挥洒自己的笑容&lt;br&gt;爱情会在任何地方留我&lt;br&gt;跟着感觉走紧抓住梦的手&lt;br&gt;蓝天越来越近越来越温柔&lt;br&gt;心情就象风一样自由&lt;br&gt;突然发现一个完全不同的我&lt;br&gt;跟着感觉走让它带着我&lt;br&gt;希望就在不远处等着我&lt;br&gt;跟着感觉走让它带着我&lt;br&gt;梦想的事哪里都会有&lt;br&gt;跟着感觉走紧抓住梦的手&lt;br&gt;脚步越来越轻越来越快活&lt;br&gt;尽情挥洒自己的笑容&lt;br&gt;爱情会在任何地方留我&lt;br&gt;跟着感觉走紧抓住梦的手&lt;br&gt;蓝天越来越近越来越温柔&lt;br&gt;心情就象风一样自由&lt;br&gt;突然发现一个完全不同的我&lt;br&gt;跟着感觉走让它带着我&lt;br&gt;希望就在不远处等着我&lt;br&gt;跟着感觉走让它带着我&lt;br&gt;梦想的事哪里都会有&lt;br&gt;跟着感觉走让它带着我&lt;br&gt;希望就在不远处等着我&lt;br&gt;跟着感觉走让它带着我&lt;br&gt;梦想的事哪里都会有噢&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;至此，V神的Next主题已被鄙人所抛弃&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;跟着感觉走让它带着我&lt;br&gt;希望就在不远处等着我&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+</feed>
