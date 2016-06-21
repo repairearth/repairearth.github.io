@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-21T08:51:05.642Z</updated>
+  <updated>2016-06-21T10:57:56.895Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/06/21/npm-version/"/>
     <id>http://yoursite.com/2016/06/21/npm-version/</id>
     <published>2016-06-21T03:30:07.000Z</published>
-    <updated>2016-06-21T08:51:05.642Z</updated>
+    <updated>2016-06-21T10:57:56.895Z</updated>
     
     <content type="html">&lt;p&gt;人老了，一是怀旧，二是健忘，所以记录一下。&lt;/p&gt;
 &lt;h2 id=&quot;Semantic-Versioning-2-0-0&quot;&gt;&lt;a href=&quot;#Semantic-Versioning-2-0-0&quot; class=&quot;headerlink&quot; title=&quot;Semantic Versioning 2.0.0&quot;&gt;&lt;/a&gt;Semantic Versioning 2.0.0&lt;/h2&gt;&lt;p&gt;NPM 中依赖模块的版本都需要遵循 &lt;a href=&quot;http://semver.org/lang/zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;semver 2.0&lt;/a&gt; 的语义化版本规则。&lt;/p&gt;
@@ -50,7 +50,7 @@
 &lt;h2 id=&quot;如何选择依赖范围&quot;&gt;&lt;a href=&quot;#如何选择依赖范围&quot; class=&quot;headerlink&quot; title=&quot;如何选择依赖范围&quot;&gt;&lt;/a&gt;如何选择依赖范围&lt;/h2&gt;&lt;h3 id=&quot;node-模块&quot;&gt;&lt;a href=&quot;#node-模块&quot; class=&quot;headerlink&quot; title=&quot;node 模块&quot;&gt;&lt;/a&gt;node 模块&lt;/h3&gt;&lt;p&gt;在编写 node 的模块的时候，模块自身可能会依赖一些 dependencies, 然而我们并不想每一次依赖的 模块有任何小的 bug fix 的时候就要重新更新一次依赖，因此会推荐对大部分的依赖使用 &lt;code&gt;~&lt;/code&gt; 前缀， 这样可以保证可以享受到这些依赖模块的 bug fix，并且不需要更新自身的版本。同时，也不会引入 一些 API 变更导致的无法预料的错误。当然，如果对一些完全信任的模块也可以考虑使用 &lt;code&gt;^&lt;/code&gt; 前缀。&lt;br&gt;see: &lt;a href=&quot;https://github.com/koajs/koa/blob/master/package.json&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;koa&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;node-项目&quot;&gt;&lt;a href=&quot;#node-项目&quot; class=&quot;headerlink&quot; title=&quot;node 项目&quot;&gt;&lt;/a&gt;node 项目&lt;/h3&gt;&lt;p&gt;然而在编写 node 的项目的时候，我们更加希望能够追踪到所有依赖的任何变动，因为项目也不会有 关于自身版本更新的烦恼，因此更加倾向于写死依赖的版本，这样如果有任何由于更加容易追踪 升级依赖导致的 bug。&lt;br&gt;see: &lt;a href=&quot;https://github.com/koajs/todo/blob/master/package.json&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;koa-todo&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;如何选择发布模块的版本&quot;&gt;&lt;a href=&quot;#如何选择发布模块的版本&quot; class=&quot;headerlink&quot; title=&quot;如何选择发布模块的版本&quot;&gt;&lt;/a&gt;如何选择发布模块的版本&lt;/h2&gt;&lt;p&gt;看完编写过程中怎么样选择依赖的范围，回过头来看看，如果我们需要编写一个发布到 &lt;code&gt;npm&lt;/code&gt; 的模块， 需要如何选择发布的模块的版本。&lt;br&gt;当刚开始开发这个模块，它的功能和 API 都会有较大的调整的时候，可以选择发布 &lt;code&gt;0.0.z&lt;/code&gt; 版本。&lt;br&gt;而当一个模块的 &lt;code&gt;API&lt;/code&gt; 基本已经成型，不过可能会有一些新的 API 增加的时候，可以选择发布 &lt;code&gt;0.y.z&lt;/code&gt; 版本。&lt;br&gt;当一个模块的功能基本已经完全定下来的时候，可以选择发布 &lt;code&gt;x.y.z(x &amp;gt;= 1)&lt;/code&gt; 版本。当模块发布到 &lt;code&gt;npm&lt;/code&gt; 之后，就意味着已经正式准备好了，所以尽量把发布的第一个版本定为 &lt;code&gt;1.0.0&lt;/code&gt;。&lt;br&gt;当修复了一些小的 bug 的时候，请升级 &lt;code&gt;z&lt;/code&gt; 的版本号，这样可以让用户通过 &lt;code&gt;~&lt;/code&gt; 和 &lt;code&gt;^&lt;/code&gt; 前缀最快速的享受你的 bug fix。&lt;br&gt;当增加了新的功能的时候，可以选择升级 &lt;code&gt;y&lt;/code&gt; 的版本号。&lt;br&gt;当变更会影响原有接口的情况下，起码要升级 &lt;code&gt;y&lt;/code&gt; 的版本号，这样不会影响大部分依赖这个库的用户。&lt;br&gt;当重构了模块，从设计上就有很大不同的情况下，需要升级 &lt;code&gt;x&lt;/code&gt; 版本号。&lt;br&gt;遵循这几条规则，这样用户在引入这个模块的时候就可以轻松的通过 &lt;code&gt;semver&lt;/code&gt; 提供的验证机制来更轻松的使用你的模块。&lt;/p&gt;
-&lt;p&gt;原谅地址：&lt;a href=&quot;http://deadhorse.me/nodejs/2014/04/27/semver-in-nodejs.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;node.js 中的版本管理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原文地址：&lt;a href=&quot;http://deadhorse.me/nodejs/2014/04/27/semver-in-nodejs.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;node.js 中的版本管理&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">

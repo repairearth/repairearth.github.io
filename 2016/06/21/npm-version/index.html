@@ -128,7 +128,7 @@ Semantic Versioning 2.0.0NPM 中依赖模块的版本都需要遵循 semver 2.0 
 修订号：当你做了向下兼容的问题修正
 
 先行版本号及版本编译信息可以加到“主版本号.次版">
-<meta property="og:updated_time" content="2016-06-21T08:51:05.642Z">
+<meta property="og:updated_time" content="2016-06-21T10:57:56.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<i class='iconfont icon-zhuan' style='vertical-align:super;'></i> NPM版本管理">
 <meta name="twitter:description" content="人老了，一是怀旧，二是健忘，所以记录一下。
@@ -386,7 +386,7 @@ Semantic Versioning 2.0.0NPM 中依赖模块的版本都需要遵循 semver 2.0 
 <h2 id="如何选择依赖范围"><a href="#如何选择依赖范围" class="headerlink" title="如何选择依赖范围"></a>如何选择依赖范围</h2><h3 id="node-模块"><a href="#node-模块" class="headerlink" title="node 模块"></a>node 模块</h3><p>在编写 node 的模块的时候，模块自身可能会依赖一些 dependencies, 然而我们并不想每一次依赖的 模块有任何小的 bug fix 的时候就要重新更新一次依赖，因此会推荐对大部分的依赖使用 <code>~</code> 前缀， 这样可以保证可以享受到这些依赖模块的 bug fix，并且不需要更新自身的版本。同时，也不会引入 一些 API 变更导致的无法预料的错误。当然，如果对一些完全信任的模块也可以考虑使用 <code>^</code> 前缀。<br>see: <a href="https://github.com/koajs/koa/blob/master/package.json" target="_blank" rel="external">koa</a></p>
 <h3 id="node-项目"><a href="#node-项目" class="headerlink" title="node 项目"></a>node 项目</h3><p>然而在编写 node 的项目的时候，我们更加希望能够追踪到所有依赖的任何变动，因为项目也不会有 关于自身版本更新的烦恼，因此更加倾向于写死依赖的版本，这样如果有任何由于更加容易追踪 升级依赖导致的 bug。<br>see: <a href="https://github.com/koajs/todo/blob/master/package.json" target="_blank" rel="external">koa-todo</a></p>
 <h2 id="如何选择发布模块的版本"><a href="#如何选择发布模块的版本" class="headerlink" title="如何选择发布模块的版本"></a>如何选择发布模块的版本</h2><p>看完编写过程中怎么样选择依赖的范围，回过头来看看，如果我们需要编写一个发布到 <code>npm</code> 的模块， 需要如何选择发布的模块的版本。<br>当刚开始开发这个模块，它的功能和 API 都会有较大的调整的时候，可以选择发布 <code>0.0.z</code> 版本。<br>而当一个模块的 <code>API</code> 基本已经成型，不过可能会有一些新的 API 增加的时候，可以选择发布 <code>0.y.z</code> 版本。<br>当一个模块的功能基本已经完全定下来的时候，可以选择发布 <code>x.y.z(x &gt;= 1)</code> 版本。当模块发布到 <code>npm</code> 之后，就意味着已经正式准备好了，所以尽量把发布的第一个版本定为 <code>1.0.0</code>。<br>当修复了一些小的 bug 的时候，请升级 <code>z</code> 的版本号，这样可以让用户通过 <code>~</code> 和 <code>^</code> 前缀最快速的享受你的 bug fix。<br>当增加了新的功能的时候，可以选择升级 <code>y</code> 的版本号。<br>当变更会影响原有接口的情况下，起码要升级 <code>y</code> 的版本号，这样不会影响大部分依赖这个库的用户。<br>当重构了模块，从设计上就有很大不同的情况下，需要升级 <code>x</code> 版本号。<br>遵循这几条规则，这样用户在引入这个模块的时候就可以轻松的通过 <code>semver</code> 提供的验证机制来更轻松的使用你的模块。</p>
-<p>原谅地址：<a href="http://deadhorse.me/nodejs/2014/04/27/semver-in-nodejs.html" target="_blank" rel="external">node.js 中的版本管理</a></p>
+<p>原文地址：<a href="http://deadhorse.me/nodejs/2014/04/27/semver-in-nodejs.html" target="_blank" rel="external">node.js 中的版本管理</a></p>
 
       
     </div>
