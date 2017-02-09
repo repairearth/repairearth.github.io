@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-10T09:56:43.533Z</updated>
+  <updated>2017-02-09T07:17:50.729Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 nvm 管理 NodeJS</title>
+    <link href="http://yoursite.com/2017/02/09/nodejs-nvm/"/>
+    <id>http://yoursite.com/2017/02/09/nodejs-nvm/</id>
+    <published>2017-02-09T06:20:54.000Z</published>
+    <updated>2017-02-09T07:17:50.729Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;nvm-是什么？&quot;&gt;&lt;a href=&quot;#nvm-是什么？&quot; class=&quot;headerlink&quot; title=&quot;nvm 是什么？&quot;&gt;&lt;/a&gt;nvm 是什么？&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;nvm 是 Node.js 版本管理工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;请移步 -&amp;gt; &lt;a href=&quot;https://github.com/creationix/nvm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nvm&lt;/a&gt;&lt;br&gt;Windows 用户开个小灶 -&amp;gt; &lt;a href=&quot;https://github.com/coreybutler/nvm-windows&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nvm-windows&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;配置（Windows）&quot;&gt;&lt;a href=&quot;#配置（Windows）&quot; class=&quot;headerlink&quot; title=&quot;配置（Windows）&quot;&gt;&lt;/a&gt;配置（Windows）&lt;/h2&gt;&lt;p&gt;囧，好像并不需要什么特别配置，在安装目录的 settings.txt 加两行&lt;br&gt;&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;node_mirror:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//npm.taobao.org/mirrors/node/ &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;npm_mirror:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;https:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//npm.taobao.org/mirrors/npm/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;OK，开始使用吧！&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;img src=&quot;/images/nvm.png&quot; class=&quot;full-image&quot; alt=&quot;nvm&quot;&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;nvm-是什么？&quot;&gt;&lt;a href=&quot;#nvm-是什么？&quot; class=&quot;headerlink&quot; title=&quot;nvm 是什么？&quot;&gt;&lt;/a&gt;nvm 是什么？&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;nvm 是 Node.js 版本管理工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;请移步 -&amp;gt; &lt;a href=&quot;https://github.com/creationix/nvm&quot;&gt;nvm&lt;/a&gt;&lt;br&gt;Windows 用户开个小灶 -&amp;gt; &lt;a href=&quot;https://github.com/coreybutler/nvm-windows&quot;&gt;nvm-windows&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;配置（Windows）&quot;&gt;&lt;a href=&quot;#配置（Windows）&quot; class=&quot;headerlink&quot; title=&quot;配置（Windows）&quot;&gt;&lt;/a&gt;配置（Windows）&lt;/h2&gt;&lt;p&gt;囧，好像并不需要什么特别配置，在安装目录的 settings.txt 加两行&lt;br&gt;&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;node_mirror:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//npm.taobao.org/mirrors/node/ &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;npm_mirror:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;https:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//npm.taobao.org/mirrors/npm/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;OK，开始使用吧！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Node" scheme="http://yoursite.com/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS writing-mode</title>
+    <link href="http://yoursite.com/2016/10/21/jingyesi/"/>
+    <id>http://yoursite.com/2016/10/21/jingyesi/</id>
+    <published>2016-10-21T10:02:57.000Z</published>
+    <updated>2016-10-21T10:32:22.228Z</updated>
+    
+    <content type="html">&lt;img src=&quot;/images/jys.jpg&quot; class=&quot;full-image&quot; alt=&quot;静夜思&quot;&gt;
+&lt;p style=&quot;margin: 0 auto;writing-mode: tb-rl;-webkit-writing-mode: vertical-rl;writing-mode: vertical-rl;&quot;&gt;床前明月光，&lt;br&gt;疑是地上霜。&lt;br&gt;兴头望明月，&lt;br&gt;低头思故乡。&lt;/p&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/images/jys.jpg&quot; class=&quot;full-image&quot; alt=&quot;静夜思&quot;&gt;
+&lt;p style=&quot;margin: 0 auto;writing-mode: tb-rl;-webkit-writing-mode: vertical-rl;writ
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>Give it five minutes</title>
